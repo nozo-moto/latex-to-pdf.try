@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: docker://pandoc/latex:2.6
       with:
-        key: pandoc -sN -f markdown -t latex README.md -o README.tex
+        args: -sN -f markdown -t latex README.md -o README.tex
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@master
       with:
@@ -36,4 +36,3 @@ jobs:
         asset_path: ./README.pdf
         asset_name: README.pdf
         asset_content_type: application/pdf
-        path: k
